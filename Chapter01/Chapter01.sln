@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.EntityModels", "Northwind.EntityModels\Northwind.EntityModels.csproj", "{ECA15613-A5B5-4F0B-9F48-5637CBE542E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.DataContext", "Northwind.DataContext\Northwind.DataContext.csproj", "{95ADB98C-62C1-41DD-A7AD-C2EAED5CB4D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.Tests", "Northwind.Tests\Northwind.Tests.csproj", "{1473AD35-2223-4E88-B0EC-3FED274F1918}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ECA15613-A5B5-4F0B-9F48-5637CBE542E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECA15613-A5B5-4F0B-9F48-5637CBE542E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECA15613-A5B5-4F0B-9F48-5637CBE542E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECA15613-A5B5-4F0B-9F48-5637CBE542E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95ADB98C-62C1-41DD-A7AD-C2EAED5CB4D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95ADB98C-62C1-41DD-A7AD-C2EAED5CB4D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95ADB98C-62C1-41DD-A7AD-C2EAED5CB4D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95ADB98C-62C1-41DD-A7AD-C2EAED5CB4D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1473AD35-2223-4E88-B0EC-3FED274F1918}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1473AD35-2223-4E88-B0EC-3FED274F1918}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1473AD35-2223-4E88-B0EC-3FED274F1918}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1473AD35-2223-4E88-B0EC-3FED274F1918}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
