@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using System.Security.Cryptography;
+using System.Security.Principal;
 using System.Text;
 
 namespace CryptographyLib;
@@ -101,4 +102,105 @@ public static class Protector
 
        return Encoding.Unicode.GetString(plainBytes);
    }
+
+   private static Dictionary<string, User> Users = new();
+
+   public static User Register(string username, string password,  string[]? roles = null)
+   {
+       // Generate a random salt
+       RandomNumberGenerator rng = RandomNumberGenerator.Create();
+       byte[] saltBytes = new byte[16];
+       string saltText = Convert.ToBase64String(saltBytes);
+
+       // Generate the salted and hashed password
+       string saltedHashedPassword = SaltAndHashPassword(password, saltText);
+
+       User user = new(username, saltText, saltedHashedPassword, roles);
+
+       Users.Add(user.Name, user);
+
+       return user;
+   }
+
+   // Check a user's password that is stored in the Users directory
+   public static bool CheckPassword(string username, string password)
+   {
+       if (!Users.ContainsKey(username))
+       {
+           return false;
+       }
+
+       User u = Users[username];
+
+       return CheckPassword(password, u.Salt, u.SaltedHashedPassword);
+   }
+
+    // CHeck a password using a salt and hashed password
+    public static bool CheckPassword(string password, string salt, string hashedPassword)
+    {
+        // re-generate the salted and hashed password
+        string saltedHashedPassword = SaltAndHashPassword(password, salt);
+
+        return (saltedHashedPassword == hashedPassword);
+    }
+
+    public static string SaltAndHashPassword(string password, string salt)
+    {
+        using (SHA256 sha = SHA256.Create())
+        {
+            string saltedPassword = password + salt;
+            return Convert.ToBase64String(sha.ComputeHash(Encoding.Unicode.GetBytes(saltedPassword)));
+        }
+    }
+
+    public static string? PublicKey;
+
+    public static string GenerateSignature(string data)
+    {
+        byte[] dataBytes = Encoding.Unicode.GetBytes(data);
+        SHA256 sha = SHA256.Create();
+        byte[] hashedData = sha.ComputeHash(dataBytes);
+        RSA rsa = RSA.Create();
+
+        PublicKey = rsa.ToXmlString(false);
+        return Convert.ToBase64String(rsa.SignHash(hashedData, HashAlgorithmName.SHA256, RSASignaturePadding.Pkcs1));
+    }
+
+    public static bool ValidateSignature(string data, string signature)
+    {
+        if (PublicKey is null) return false;
+
+        byte[] dataBytes = Encoding.Unicode.GetBytes(data);
+        SHA256 sha = SHA256.Create();
+
+        byte[] hashedData = sha.ComputeHash(dataBytes);
+        byte[] signatureBytes = Convert.FromBase64String(signature);
+
+        RSA rsa = RSA.Create();
+        rsa.FromXmlString(PublicKey);
+
+        return rsa.VerifyHash(hashedData, signatureBytes, HashAlgorithmName.SHA256, RSASignaturePadding.Pkcs1);
+    }
+
+    public static byte[] GetRandomKeyOrIV(int size)
+    {
+        RandomNumberGenerator r = RandomNumberGenerator.Create();
+        byte[] data = new byte[size];
+
+        // The array is filled with cryptographically random bytes
+        r.GetBytes(data);
+        return data;
+    }
+
+    public static void LogIn(string username, string password)
+    {
+        if (CheckPassword(username, password))
+        {
+            GenericIdentity gi = new(name: username, type: "BasicAuth");
+            GenericPrincipal gp = new(identity: gi, roles: Users[username].Roles);
+
+            // Set the principal on the current thread so that it will be used for authorization by default
+            Thread.CurrentPrincipal = gp;
+        }
+    }
 }
