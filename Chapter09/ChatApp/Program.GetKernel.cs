@@ -11,6 +11,23 @@ partial class Program
 
 	Kernel kernel = kernelBuilder.Build();
 
+	// Create a prompt function as part of a plugin and add it to the kernel
+	kernel.ImportPluginFromFunctions(pluginName: "AuthorInformation",
+	[
+		kernel.CreateFunctionFromMethod(
+		  method: GetAuthorBiography,
+		  functionName: nameof(GetAuthorBiography),
+		  description: "Gets the author's biography.")
+	]);
+
+	kernel.ImportPluginFromFunctions(pluginName: "NorthwindProducts", [
+		kernel.CreateFunctionFromMethod(
+		method: GetProductsInCategory,
+		functionName: nameof(GetProductsInCategory),
+		description: "Get the products in a category from the Northwind database."
+		  )
+	]);
+
 	return kernel;
   }
 }
