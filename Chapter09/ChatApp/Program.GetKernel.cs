@@ -1,3 +1,5 @@
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Microsoft.SemanticKernel;
 
 partial class Program
@@ -8,6 +10,11 @@ partial class Program
 
 	// Configure the OpenAI chat with model and secret key.
 	kernelBuilder.AddOpenAIChatCompletion(settings.ModelId, settings.OpenAISecretKey);
+
+	kernelBuilder.Services.AddLogging(c =>
+		c.AddConsole().SetMinimumLevel(LogLevel.Trace));
+	kernelBuilder.Services.ConfigureHttpClientDefaults(c =>
+		c.AddStandardResilienceHandler());
 
 	Kernel kernel = kernelBuilder.Build();
 
