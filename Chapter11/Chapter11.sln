@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogicUnitTests", "B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.Commerce", "Northwind.Commerce\Northwind.Commerce.csproj", "{05E42091-F0FE-470B-B3CA-04E9BBFE6B98}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentTests", "FluentTests\FluentTests.csproj", "{882B87FA-96EA-4273-8961-156F368C038C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{05E42091-F0FE-470B-B3CA-04E9BBFE6B98}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05E42091-F0FE-470B-B3CA-04E9BBFE6B98}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{05E42091-F0FE-470B-B3CA-04E9BBFE6B98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{882B87FA-96EA-4273-8961-156F368C038C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{882B87FA-96EA-4273-8961-156F368C038C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{882B87FA-96EA-4273-8961-156F368C038C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{882B87FA-96EA-4273-8961-156F368C038C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
