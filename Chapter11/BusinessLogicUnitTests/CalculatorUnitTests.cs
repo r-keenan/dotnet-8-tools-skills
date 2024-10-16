@@ -1,12 +1,25 @@
 using BusinessLogic;
+using Xunit.Abstractions;
 
 namespace BusinessLogicUnitTests;
 
-public class CalculatorUnitTests 
+public class CalculatorUnitTests: IDisposable 
 {
+    private readonly Calculator _sut;
+    private readonly ITestOutputHelper _output;
+
+    public CalculatorUnitTests(ITestOutputHelper output)
+    {
+        _sut = new();
+        _output = output;
+
+        _output.WriteLine("Constructor runs before each test.");
+    }
+
     [Fact]
     public void TestAdding2And2()
     {
+        _output.WriteLine($"Running {nameof(TestAdding2And2)}");
         // Arrange
         double number1 = 2;
         double number2 = 2;
@@ -22,8 +35,9 @@ public class CalculatorUnitTests
     }
 
     [Fact]
-    public void TestAdding2and3() 
+    public void TestAdding2And3() 
     {
+        _output.WriteLine($"Running {nameof(TestAdding2And3)}");
         // Arrange
         double number1 = 2;
         double number2 = 3;
@@ -44,6 +58,7 @@ public class CalculatorUnitTests
     [InlineData(5, 2, 3)]
     public void TestAdding(double expected, double number1, double number2) 
     {
+        _output.WriteLine($"Running {nameof(TestAdding)}");
         // Arrange
         Calculator sut = new();
 
@@ -59,6 +74,7 @@ public class CalculatorUnitTests
     [ClassData(typeof(AddingNumbersData))]
     public void TestAddingPartTwo(double expected, double number1, double number2) 
     {
+        _output.WriteLine($"Running {nameof(TestAddingPartTwo)}");
         // Arrange
         Calculator sut = new();
 
@@ -74,6 +90,7 @@ public class CalculatorUnitTests
     [ClassData(typeof(AddingNumbersDataTyped))]
     public void TestAddingPartThree(double expected, double number1, double number2) 
     {
+        _output.WriteLine($"Running {nameof(TestAddingPartTwo)}");
         // Arrange
         Calculator sut = new();
 
@@ -89,6 +106,7 @@ public class CalculatorUnitTests
     [MemberData(memberName: nameof(GetTestData))]
     public void TestAddingPartFour(double expected, double number1, double number2) 
     {
+        _output.WriteLine($"Running {nameof(TestAddingPartTwo)}");
         // Arrange
         Calculator sut = new();
 
@@ -107,5 +125,11 @@ public class CalculatorUnitTests
 
         // Test adding 2 and 3 to get 5
         yield return new object[] {5, 2, 3};
+    }
+
+    public void Dispose()
+    {
+        // Cleanup the _sut if necessary
+        _output.WriteLine("Dispose runs afters each test.");
     }
 }

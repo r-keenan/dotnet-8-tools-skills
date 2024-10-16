@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="../BusinessLogic/BusinessLogic.csproj" />
+    <ProjectReference Include="../Northwind.Commerce/Northwind.Commerce.csproj" />
   </ItemGroup>
 
   <ItemGroup>
