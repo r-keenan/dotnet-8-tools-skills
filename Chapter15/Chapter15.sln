@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnvironmentLib", "Environme
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AboutMyEnvironment", "AboutMyEnvironment\AboutMyEnvironment.csproj", "{1964CDAF-36F7-403E-AF1A-9BDE0CEA2EE7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.Mvc", "Northwind.Mvc\Northwind.Mvc.csproj", "{BC70F973-2C14-473D-A1E7-B67CA8FEB9F0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{1964CDAF-36F7-403E-AF1A-9BDE0CEA2EE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1964CDAF-36F7-403E-AF1A-9BDE0CEA2EE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1964CDAF-36F7-403E-AF1A-9BDE0CEA2EE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC70F973-2C14-473D-A1E7-B67CA8FEB9F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC70F973-2C14-473D-A1E7-B67CA8FEB9F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC70F973-2C14-473D-A1E7-B67CA8FEB9F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC70F973-2C14-473D-A1E7-B67CA8FEB9F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
