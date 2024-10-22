@@ -22,4 +22,4 @@ See the following code examples
 
 ### Dependency Inversion Principle (DIP)
 
-[View DIP](./SolidPrinciplesApp/CustomerService.cs)
+[View DIP example](./SolidPrinciplesApp/CustomerService.cs)
