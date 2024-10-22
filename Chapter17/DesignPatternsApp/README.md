@@ -9,6 +9,10 @@ Full List of Design Patterns with C# Examples
 
 [Builder example](./UserProfile.cs)
 
+### Factory Pattern
+
+[Factory example](./Project.cs)
+
 ## Structural Patterns
 
 ### Adapter Pattern (Wrapper pattern)
