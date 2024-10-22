@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolidPrinciplesApp", "SolidPrinciplesApp\SolidPrinciplesApp.csproj", "{91F18847-1067-4B37-B22B-C32104DB3B6F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatternsApp", "DesignPatternsApp\DesignPatternsApp.csproj", "{6E7C1596-96D0-4617-9BB7-6F379F1FFC91}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{91F18847-1067-4B37-B22B-C32104DB3B6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91F18847-1067-4B37-B22B-C32104DB3B6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91F18847-1067-4B37-B22B-C32104DB3B6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E7C1596-96D0-4617-9BB7-6F379F1FFC91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E7C1596-96D0-4617-9BB7-6F379F1FFC91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E7C1596-96D0-4617-9BB7-6F379F1FFC91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E7C1596-96D0-4617-9BB7-6F379F1FFC91}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
