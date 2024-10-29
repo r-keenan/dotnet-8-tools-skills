@@ -7,20 +7,24 @@ Full List of Design Patterns with C# Examples
 
 ### Builder Pattern
 
-[Builder example](./UserProfile.cs)
+[Builder example](./DesignPatternsApp/UserProfile.cs)
 
 ### Factory Pattern
 
-[Factory example](./Project.cs)
+[Factory example](./DesignPatternsApp/Project.cs)
 
 ## Structural Patterns
 
 ### Adapter Pattern (Wrapper pattern)
 
-[Adapter example](./TextProcessor.cs)
+[Adapter example](./DesignPatternsApp/TextProcessor.cs)
 
 ## Behavioral Patterns
 
+### Mediator Pattern
+
+[Mediator example](./MediatorApp)
+
 ### Template Method Pattern
 
-[Template Method example](./CookingRecipe.cs)
+[Template Method example](./DesignPatternsApp/CookingRecipe.cs)
