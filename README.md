@@ -1,5 +1,7 @@
 # Tools and Skills for .Net 8
 
+### Table of Contents
+
 - Chapter01 - [Introducing Tools and Skills for .Net](./Chapter01/)
 - Chapter05 - [Logging, Tracing, and Metrics for Observability](./Chapter05/)
 - Chapter06 - [Documenting Your Code, APIs, and Services](./Chapter06/)
